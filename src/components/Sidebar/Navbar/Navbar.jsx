@@ -1,7 +1,6 @@
 import React from 'react'
 import './Navbar.css'
-import logo from '../../../assets/logo.png';
-import icon from '../../../assets/icon.svg';
+import { assets } from './../../../../../frontened/src/assets/assets';
 const Navbar = () => {
   return (
     <div className='navbar'>
