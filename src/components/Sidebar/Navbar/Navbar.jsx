@@ -14,7 +14,7 @@ const Navbar = () => {
       </div>
 
       <div className="navbar-actions">
-        <img className='profile' src={profile_image} alt="Profile" />
+        <img className='profile' src={icon} alt="Profile" />
       </div>
     </div>
   )
