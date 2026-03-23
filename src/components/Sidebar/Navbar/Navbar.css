@@ -1,0 +1,141 @@
+.navbar{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+  padding: 14px 20px;
+  background: rgba(14, 17, 24, 0.72);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+  backdrop-filter: blur(14px);
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.navbar::after{
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  border-bottom: 1px solid rgba(255, 122, 50, 0.22);
+}
+
+.navbar-left{
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.navbar-brand{
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.navbar-brand .logo{
+  width: 36px;
+  height: 36px;
+  object-fit: contain;
+}
+
+.brand-text{
+  font-size: 18px;
+  font-weight: 700;
+  letter-spacing: 0.3px;
+  color: var(--text);
+}
+
+.navbar-status{
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.4px;
+  text-transform: uppercase;
+  padding: 6px 10px;
+  border-radius: 999px;
+  color: #0b0f16;
+  background: linear-gradient(135deg, rgba(255, 99, 71, 0.95), rgba(255, 150, 120, 0.95));
+  box-shadow: 0 8px 16px rgba(255, 99, 71, 0.28);
+}
+
+.navbar-actions{
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 14px;
+  margin-left: auto;
+}
+
+.nav-btn{
+  padding: 8px 14px;
+  border-radius: 10px;
+  border: 1px solid transparent;
+  background: linear-gradient(135deg, rgba(255, 122, 50, 0.95), rgba(255, 196, 88, 0.95));
+  color: #0b0f16;
+  font-weight: 700;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.nav-btn:hover{
+  transform: translateY(-1px);
+  box-shadow: 0 10px 18px rgba(255, 122, 50, 0.28);
+}
+
+.profile{
+  width: 36px;
+  height: 36px;
+  display: block;
+  border-radius: 50%;
+  border: 2px solid rgba(255, 122, 50, 0.55);
+  object-fit: cover;
+  object-position: center;
+  flex-shrink: 0;
+}
+
+@media (max-width: 720px){
+  .navbar{
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+  .navbar-actions{
+    margin-left: auto;
+  }
+  .profile{
+    width: 40px;
+    height: 40px;
+  }
+}
+
+@media (max-width: 480px){
+  .navbar{
+    padding: 12px 16px;
+    gap: 12px;
+  }
+
+  .navbar-left{
+    gap: 10px;
+    min-width: 0;
+  }
+
+  .navbar-brand{
+    gap: 10px;
+    min-width: 0;
+  }
+
+  .brand-text{
+    font-size: 16px;
+  }
+
+  .navbar-status{
+    padding: 5px 9px;
+    font-size: 11px;
+  }
+
+  .profile{
+    width: 36px;
+    height: 36px;
+  }
+}

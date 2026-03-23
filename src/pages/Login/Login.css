@@ -1,0 +1,68 @@
+.admin-login-page {
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  padding: 24px;
+}
+
+.admin-login-card {
+  width: min(100%, 460px);
+  padding: 30px;
+  border-radius: 24px;
+  background:
+    radial-gradient(circle at top right, rgba(106, 167, 255, 0.18), transparent 32%),
+    radial-gradient(circle at left center, rgba(255, 140, 76, 0.12), transparent 28%),
+    linear-gradient(145deg, rgba(20, 24, 33, 0.98), rgba(11, 15, 22, 0.96));
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.42);
+}
+
+.admin-login-eyebrow {
+  font-size: 12px;
+  letter-spacing: 1.4px;
+  text-transform: uppercase;
+  color: #ffb78c;
+}
+
+.admin-login-card h1 {
+  margin: 10px 0 12px;
+  font-size: clamp(30px, 4vw, 40px);
+}
+
+.admin-login-subtitle {
+  color: var(--muted);
+  line-height: 1.7;
+}
+
+.admin-login-fields {
+  display: grid;
+  gap: 14px;
+  margin-top: 20px;
+}
+
+.admin-login-fields input {
+  width: 100%;
+  padding: 14px 16px;
+  border-radius: 16px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: rgba(11, 15, 22, 0.74);
+  color: var(--text);
+  outline: none;
+}
+
+.admin-login-fields input:focus {
+  border-color: rgba(106, 167, 255, 0.45);
+  box-shadow: 0 0 0 3px rgba(106, 167, 255, 0.12);
+}
+
+.admin-login-card button {
+  width: 100%;
+  height: 48px;
+  margin-top: 18px;
+  border: none;
+  border-radius: 16px;
+  background: linear-gradient(120deg, #ffd678 0%, #ff9b56 100%);
+  color: #24150d;
+  font-weight: 800;
+  cursor: pointer;
+}

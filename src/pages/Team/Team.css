@@ -1,0 +1,142 @@
+.team-page {
+  padding: 24px;
+  display: grid;
+  gap: 22px;
+}
+
+.team-hero,
+.team-card {
+  position: relative;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 20px 44px rgba(0, 0, 0, 0.32);
+}
+
+.team-hero {
+  padding: 30px;
+  border-radius: 24px;
+  background:
+    radial-gradient(circle at top right, rgba(106, 167, 255, 0.18), transparent 32%),
+    radial-gradient(circle at left center, rgba(74, 228, 179, 0.14), transparent 28%),
+    linear-gradient(135deg, rgba(16, 20, 28, 0.94), rgba(24, 29, 39, 0.86));
+  isolation: isolate;
+  animation: teamFadeUp 260ms ease-out;
+}
+
+.team-hero::after,
+.team-card::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(120deg, rgba(255, 255, 255, 0.08), transparent 40%);
+  opacity: 0;
+  transform: translateX(-30%);
+  animation: teamSheen 3.4s ease-in-out infinite;
+  pointer-events: none;
+}
+
+.team-eyebrow,
+.team-role {
+  font-size: 12px;
+  letter-spacing: 1.4px;
+  text-transform: uppercase;
+}
+
+.team-eyebrow {
+  color: var(--accent-2);
+}
+
+.team-hero h1 {
+  font-size: clamp(28px, 4vw, 38px);
+  line-height: 1.05;
+  margin: 8px 0 12px;
+}
+
+.team-subtitle,
+.team-focus {
+  color: var(--muted);
+  line-height: 1.7;
+}
+
+.team-hero-glow {
+  position: absolute;
+  width: 260px;
+  height: 260px;
+  right: -50px;
+  top: -70px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(106, 167, 255, 0.34), transparent 68%);
+  filter: blur(10px);
+  z-index: -1;
+  animation: teamGlow 6s ease-in-out infinite;
+}
+
+.team-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  gap: 18px;
+}
+
+.team-card {
+  padding: 22px;
+  border-radius: 22px;
+  background: rgba(16, 20, 28, 0.74);
+  backdrop-filter: blur(14px);
+  opacity: 0;
+  animation: teamCardIn 0.45s ease-out forwards;
+}
+
+.team-avatar {
+  width: 64px;
+  height: 64px;
+  display: grid;
+  place-items: center;
+  border-radius: 18px;
+  margin-bottom: 16px;
+  background: linear-gradient(135deg, rgba(74, 228, 179, 0.16), rgba(106, 167, 255, 0.14));
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.team-role {
+  color: var(--accent);
+  margin-bottom: 8px;
+}
+
+.team-card h2 {
+  font-size: 22px;
+  margin-bottom: 10px;
+}
+
+@keyframes teamFadeUp {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes teamSheen {
+  0% { opacity: 0; transform: translateX(-30%); }
+  35% { opacity: 0.4; }
+  70% { opacity: 0; transform: translateX(30%); }
+  100% { opacity: 0; transform: translateX(30%); }
+}
+
+@keyframes teamGlow {
+  0%, 100% { transform: translate3d(0, 0, 0); }
+  50% { transform: translate3d(-16px, 14px, 0); }
+}
+
+@keyframes teamCardIn {
+  from { opacity: 0; transform: translateY(14px) scale(0.985); }
+  to { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+@media (max-width: 900px) {
+  .team-page {
+    padding: 18px;
+  }
+
+  .team-hero {
+    padding: 20px;
+  }
+}

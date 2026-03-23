@@ -1,0 +1,199 @@
+.promotions-page {
+  padding: 24px;
+  display: grid;
+  gap: 22px;
+}
+
+.promotions-hero,
+.promotions-panel,
+.promotions-card,
+.promotions-note {
+  position: relative;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 20px 44px rgba(0, 0, 0, 0.32);
+}
+
+.promotions-hero {
+  padding: 30px;
+  border-radius: 24px;
+  background:
+    radial-gradient(circle at top right, rgba(255, 122, 50, 0.18), transparent 32%),
+    radial-gradient(circle at left center, rgba(247, 201, 72, 0.14), transparent 28%),
+    linear-gradient(135deg, rgba(16, 20, 28, 0.94), rgba(24, 29, 39, 0.86));
+  isolation: isolate;
+  animation: promoFadeUp 260ms ease-out;
+}
+
+.promotions-hero::after,
+.promotions-panel::after,
+.promotions-card::after,
+.promotions-note::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(120deg, rgba(255, 255, 255, 0.08), transparent 40%);
+  opacity: 0;
+  transform: translateX(-30%);
+  animation: promoSheen 3.4s ease-in-out infinite;
+  pointer-events: none;
+}
+
+.promotions-eyebrow,
+.promotions-section-label,
+.promotions-card-label {
+  font-size: 12px;
+  letter-spacing: 1.4px;
+  text-transform: uppercase;
+  color: #ffb78c;
+}
+
+.promotions-hero h1 {
+  font-size: clamp(28px, 4vw, 38px);
+  line-height: 1.05;
+  margin: 8px 0 12px;
+}
+
+.promotions-subtitle {
+  max-width: 580px;
+  color: var(--muted);
+  font-size: 15px;
+  line-height: 1.7;
+}
+
+.promotions-hero-glow {
+  position: absolute;
+  width: 260px;
+  height: 260px;
+  right: -50px;
+  top: -70px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(255, 122, 50, 0.34), transparent 68%);
+  filter: blur(10px);
+  z-index: -1;
+  animation: promoGlow 6s ease-in-out infinite;
+}
+
+.promotions-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.1fr) minmax(280px, 0.9fr);
+  gap: 18px;
+}
+
+.promotions-panel {
+  padding: 24px;
+  border-radius: 24px;
+  background: rgba(16, 20, 28, 0.74);
+  backdrop-filter: blur(14px);
+  animation: promoFadeUp 260ms ease-out;
+}
+
+.promotions-panel-header h2 {
+  margin-top: 6px;
+  font-size: 24px;
+}
+
+.promotions-list,
+.promotions-notes {
+  display: grid;
+  gap: 14px;
+  margin-top: 18px;
+}
+
+.promotions-card,
+.promotions-note {
+  padding: 18px;
+  border-radius: 20px;
+  background: rgba(11, 15, 22, 0.74);
+}
+
+.promotions-card {
+  display: grid;
+  grid-template-columns: 1fr auto auto;
+  gap: 14px;
+  align-items: center;
+  opacity: 0;
+  animation: promoCardIn 0.45s ease-out forwards;
+}
+
+.promotions-card h3,
+.promotions-note h3 {
+  margin-top: 8px;
+  font-size: 19px;
+}
+
+.promotions-card strong {
+  color: #fff2ca;
+}
+
+.promotions-note p {
+  margin-top: 8px;
+  color: var(--muted);
+  line-height: 1.7;
+}
+
+.promotions-badge {
+  padding: 9px 12px;
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.promotions-badge.live {
+  background: rgba(74, 228, 179, 0.16);
+  color: var(--accent);
+}
+
+.promotions-badge.scheduled {
+  background: rgba(106, 167, 255, 0.16);
+  color: var(--accent-2);
+}
+
+.promotions-badge.draft {
+  background: rgba(247, 201, 72, 0.16);
+  color: var(--warning);
+}
+
+@keyframes promoFadeUp {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes promoSheen {
+  0% { opacity: 0; transform: translateX(-30%); }
+  35% { opacity: 0.4; }
+  70% { opacity: 0; transform: translateX(30%); }
+  100% { opacity: 0; transform: translateX(30%); }
+}
+
+@keyframes promoGlow {
+  0%, 100% { transform: translate3d(0, 0, 0); }
+  50% { transform: translate3d(-16px, 14px, 0); }
+}
+
+@keyframes promoCardIn {
+  from { opacity: 0; transform: translateY(14px) scale(0.985); }
+  to { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+@media (max-width: 980px) {
+  .promotions-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 900px) {
+  .promotions-page {
+    padding: 18px;
+  }
+
+  .promotions-hero,
+  .promotions-panel {
+    padding: 20px;
+  }
+
+  .promotions-card {
+    grid-template-columns: 1fr;
+  }
+}
