@@ -1,6 +1,8 @@
 import React from 'react'
 import './Navbar.css'
-import { assets } from '../../assets/assets.js';
+// import { assets } from '../../../assets/assets.js'; 
+// // OR if it's an image
+// import assets from '../../../assets/logo.png';
 const Navbar = () => {
   return (
     <div className='navbar'>
