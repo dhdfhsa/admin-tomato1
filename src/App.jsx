@@ -12,7 +12,7 @@ import Settings from './pages/Settings/Settings';
 import Login from './pages/Login/Login';
 import { ToastContainer } from 'react-toastify';
 import "toastify-js/src/toastify.css"
-
+ 
 const App = () => {
   const url  = import.meta.env.VITE_API_URL || "http://localhost:4000"
   const [adminToken, setAdminToken] = useState(localStorage.getItem('adminToken') || '')

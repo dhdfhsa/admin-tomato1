@@ -13,7 +13,7 @@ const Navbar = () => {
       </div>
 
       <div className="navbar-actions">
-        <img className='profile' src={assets.profile_icon} alt="Profile" />
+        <img className='profile' src={assets.profile_image} alt="Profile" />
       </div>
     </div>
   )

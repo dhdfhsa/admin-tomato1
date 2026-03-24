@@ -16,7 +16,7 @@ const Order = ({ url }) => {
     'Out for delivery',
     'Delivered',
   ]
-
+ 
   const fetchOrders = async () => {
     try {
       const response = await axios.get(`${url}/api/order/list`)
